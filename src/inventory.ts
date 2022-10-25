@@ -1,21 +1,40 @@
-import Inventory from "./models/Inventory";
+import InventoryItem from "./models/InventoryItem";
 
-export const inventory: Inventory[] = [
+export const inventory: InventoryItem[] = [
   {
-    name: "motor",
-    price: 10.0,
+    product: {
+      name: "coffee",
+      price: 3,
+    },
+    quantity: 13,
+  },
+  {
+    product: {
+      name: "motor",
+      price: 10.0,
+    },
     quantity: 10,
   },
   {
-    name: "sensor",
-    price: 12.5,
+    product: {
+      name: "sensor",
+      price: 12.5,
+    },
     quantity: 4,
   },
   {
-    name: "LED",
-    price: 1.0,
+    product: {
+      name: "Sp-404 mk2",
+      price: 700,
+    },
     quantity: 20,
   },
 ];
 
-export const calcInventoryValue =()
+export const calcInventoryValue = (array: InventoryItem[]): number => {
+  let sumOfAllProducts: number = 0;
+  array.forEach((item) => {
+    sumOfAllProducts += item.product.price * item.quantity;
+  });
+  return sumOfAllProducts;
+};

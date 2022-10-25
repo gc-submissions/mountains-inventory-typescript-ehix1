@@ -1,6 +1,6 @@
 import { mountains, findNameOfTallestMountain } from "./mountains";
 import { products, calcAverageProductPrice } from "./products";
-import "./inventory";
+import { calcInventoryValue, inventory } from "./inventory";
 
 //example of interface inside another interface
 // purpose is to descibe objects in objects
@@ -34,4 +34,8 @@ const tallestMountain: string = findNameOfTallestMountain(mountains);
 console.log(tallestMountain);
 // console(findNameOfTallestMountain());
 
-// const calcAverageProductPrice: number = calcAverageProductPrice(products);
+const returnValue: number = calcAverageProductPrice(products);
+console.log(returnValue);
+
+const sumOfAllInventoryItems: number = calcInventoryValue(inventory);
+console.log(sumOfAllInventoryItems);
